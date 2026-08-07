@@ -44,7 +44,7 @@
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&mo 2>, <&to 2>;
+            bindings = <&mo 3>, <&to 3>;
         };
 
         symbol_nav_td: symbol_nav_td {
@@ -141,6 +141,13 @@
             #binding-cells = <0>;
             bindings = <&out OUT_BLE &bt BT_SEL 3>;
         };
+
+        ArrowOperator: ArrowOperator {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp MINUS &kp GREATER_THAN>;
+            label = "ARROWOPERATOR";
+        };
     };
 
     keymap {
@@ -159,12 +166,12 @@
 
         Programming {
             bindings = <
-&kp EQUAL       &kp N1  &kp N2             &kp N3               &kp N4           &kp N5                                                                               &kp N6  &kp N7            &kp N8               &kp N9              &kp N0    &kp MINUS
-&kp TAB         &kp Q   &kp W              &kp E                &kp R            &kp T                                                                                &kp Y   &kp U             &kp I                &kp O               &kp P     &kp BSLH
-&kp ESC         &kp A   &hml LEFT_SHIFT S  &hml LEFT_CONTROL D  &hml LEFT_ALT F  &kp G                                                                                &kp H   &hmr RIGHT_ALT J  &hmr LEFT_CONTROL K  &hmr RIGHT_SHIFT L  &kp SEMI  &kp SQT
-&kp LEFT_SHIFT  &kp Z   &kp X              &kp C                &kp V            &kp B                                                                                &kp N   &kp M             &kp COMMA            &kp DOT             &kp FSLH  &keypad_td
-                        &kp GRAVE          &kp LCTRL            &kp LEFT_ALT                                                                                                  &kp LGUI          &kp LBKT             &kp RBKT
-                                                                                         &kp BACKSPACE  &kp DELETE  &symbol_nav_td  &magic 4 0  &kp ENTER  &kp SPACE
+&kp EQUAL       &kp N1  &kp N2             &kp N3               &kp N4           &kp N5                                                                                 &kp N6  &kp N7            &kp N8               &kp N9              &kp N0    &kp MINUS
+&kp TAB         &kp Q   &kp W              &kp E                &kp R            &kp T                                                                                  &kp Y   &kp U             &kp I                &kp O               &kp P     &kp BSLH
+&kp ESC         &kp A   &hml LEFT_SHIFT S  &hml LEFT_CONTROL D  &hml LEFT_ALT F  &kp G                                                                                  &kp H   &hmr RIGHT_ALT J  &hmr LEFT_CONTROL K  &hmr RIGHT_SHIFT L  &kp SEMI  &kp SQT
+&kp LEFT_SHIFT  &kp Z   &kp X              &kp C                &kp V            &kp B                                                                                  &kp N   &kp M             &kp COMMA            &kp DOT             &kp FSLH  &kp RIGHT_SHIFT
+                        &kp GRAVE          &kp LEFT_WIN         &kp BACKSPACE                                                                                                   &kp SPACE         &kp LBKT             &kp RBKT
+                                                                                         &kp DELETE  &symbol_nav_td  &keypad_td  &magic 4 0  &symbol_nav_td  &kp ENTER
             >;
         };
 
@@ -181,11 +188,11 @@
 
         layer_SymbolNav {
             bindings = <
-&kp INS     &kp F1    &kp F2     &kp F3    &kp F4     &kp F5                                                    &kp F6    &kp F7    &kp F8           &kp F9       &kp F10          &kp F11
-&kp SLCK    &kp EXCL  &kp HOME   &kp UP    &kp END    &kp PG_UP                                                 &kp LPAR  &kp RPAR  &kp UP           &kp PRCNT    &kp K_APP        &kp F12
-&kp CAPS    &kp AT    &kp LEFT   &kp DOWN  &kp RIGHT  &kp PG_DN                                                 &kp DLLR  &kp LEFT  &kp DOWN         &kp RIGHT    &kp PAUSE_BREAK  &kp PSCRN
-&magic 4 0  &kp HASH  &kp LBKT   &kp RBKT  &kp LBRC   &kp RBRC                                                  &kp AMPS  &kp STAR  &kp UNDER        &kp PLUS     &kp LSHFT        &kp LCTRL
-                      &kp CARET  &trans    &trans                                                                         &trans    &kp LC(LS(TAB))  &kp LC(TAB)
+&kp F1      &kp F2    &kp F3     &kp F4    &kp F5     &kp F6                                                    &kp F7     &kp F8                &kp F9                 &kp F10               &kp F11         &kp F12
+&kp INS     &kp EXCL  &kp HOME   &kp UP    &kp END    &kp PG_UP                                                 &kp PLUS   &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp NON_US_BACKSLASH  &kp PIPE        &kp HASH
+&kp CAPS    &kp AT    &kp LEFT   &kp DOWN  &kp RIGHT  &kp PG_DN                                                 &kp EQUAL  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp ASTERISK          &kp AMPERSAND   &kp AT_SIGN
+&magic 4 0  &kp HASH  &kp LBKT   &kp RBKT  &kp LBRC   &kp RBRC                                                  &kp MINUS  &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp PERCENT           &ArrowOperator  &kp DOLLAR
+                      &kp CARET  &trans    &trans                                                                          &trans                &kp LC(LS(TAB))        &kp LC(TAB)
                                                                  &to 0  &trans  &trans  &trans  &trans  &trans
             >;
         };
@@ -193,7 +200,7 @@
         layer_Magic {
             bindings = <
 &bt BT_CLR   &kp C_BRI_DN     &kp C_BRI_UP     &kp C_PREV       &kp C_NEXT       &kp C_PP                                                   &kp C_MUTE  &kp C_VOL_DN  &kp C_VOL_UP  &none  &none  &bt BT_CLR_ALL
-&bootloader  &rgb_ug RGB_SPI  &rgb_ug RGB_SAI  &rgb_ug RGB_HUI  &rgb_ug RGB_BRI  &rgb_ug RGB_TOG                                            &tog 0      &tog 1        &none         &none  &none  &bootloader
+&bootloader  &rgb_ug RGB_SPI  &rgb_ug RGB_SAI  &rgb_ug RGB_HUI  &rgb_ug RGB_BRI  &rgb_ug RGB_TOG                                            &tog 0      &tog 2        &none         &none  &none  &bootloader
 &sys_reset   &rgb_ug RGB_SPD  &rgb_ug RGB_SAD  &rgb_ug RGB_HUD  &rgb_ug RGB_BRD  &rgb_ug RGB_EFF                                            &none       &none         &none         &none  &none  &sys_reset
 &none        &none            &bt_0            &bt_1            &bt_2            &bt_3                                                      &none       &none         &none         &none  &none  &to 5
                               &out OUT_USB     &none            &none                                                                                   &none         &none         &none
