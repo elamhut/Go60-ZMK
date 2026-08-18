@@ -222,18 +222,18 @@
 };
 
 &cirque_rh_listener {
-    input-processors = <&zip_xy_scaler 7 4>;
+    input-processors = <&zip_xy_scaler 11 5>;
 
     layer_2 {
         layers = <2>;
-        input-processors = <&zip_xy_scaler 21 4>;
+        input-processors = <&zip_xy_scaler 33 5>;
     };
 };
 
 &cirque_lh_listener {
     input-processors =
         <&zip_xy_to_scroll_mapper>,
-        <&zip_xy_scaler 1 24>,
+        <&zip_xy_scaler 1 50>,
         <&zip_click_to_right_click_mapper>;
 
     layer_4 {
