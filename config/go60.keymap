@@ -222,11 +222,11 @@
 };
 
 &cirque_rh_listener {
-    input-processors = <&zip_xy_scaler 11 5>;
+    input-processors = <&zip_xy_scaler 5 2>;
 
     layer_2 {
         layers = <2>;
-        input-processors = <&zip_xy_scaler 33 5>;
+        input-processors = <&zip_xy_scaler 15 2>;
     };
 };
 
