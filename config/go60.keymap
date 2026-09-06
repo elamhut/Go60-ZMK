@@ -155,12 +155,12 @@
 
         Programming {
             bindings = <
-&kp EQUAL       &kp N1  &kp N2             &kp N3               &kp N4           &kp N5                                                                                 &kp N6  &kp N7            &kp N8               &kp N9              &kp N0    &kp MINUS
-&kp TAB         &kp Q   &kp W              &kp E                &kp R            &kp T                                                                                  &kp Y   &kp U             &kp I                &kp O               &kp P     &kp BSLH
-&kp ESC         &kp A   &hml LEFT_SHIFT S  &hml LEFT_CONTROL D  &hml LEFT_ALT F  &kp G                                                                                  &kp H   &hmr RIGHT_ALT J  &hmr LEFT_CONTROL K  &hmr RIGHT_SHIFT L  &kp SEMI  &kp SQT
-&kp LEFT_SHIFT  &kp Z   &kp X              &kp C                &kp V            &kp B                                                                                  &kp N   &kp M             &kp COMMA            &kp DOT             &kp FSLH  &kp RIGHT_SHIFT
-                        &kp GRAVE          &kp LEFT_WIN         &kp BACKSPACE                                                                                                   &kp SPACE         &kp LBKT             &kp RBKT
-                                                                                         &kp DELETE  &symbol_nav_td  &keypad_td  &magic 4 0  &symbol_nav_td  &kp ENTER
+&kp EQUAL       &kp N1            &kp N2             &kp N3               &kp N4           &kp N5                                                                                 &kp N6  &kp N7            &kp N8               &kp N9              &kp N0                     &kp MINUS
+&kp TAB         &kp Q             &kp W              &kp E                &kp R            &kp T                                                                                  &kp Y   &kp U             &kp I                &kp O               &kp P                      &kp BSLH
+&kp ESC         &hml LEFT_META A  &hml LEFT_SHIFT S  &hml LEFT_CONTROL D  &hml LEFT_ALT F  &kp G                                                                                  &kp H   &hmr RIGHT_ALT J  &hmr LEFT_CONTROL K  &hmr RIGHT_SHIFT L  &hmr RIGHT_META SEMICOLON  &kp SQT
+&kp LEFT_SHIFT  &kp Z             &kp X              &kp C                &kp V            &kp B                                                                                  &kp N   &kp M             &kp COMMA            &kp DOT             &kp FSLH                   &kp RIGHT_SHIFT
+                                  &kp GRAVE          &kp LEFT_META        &kp BACKSPACE                                                                                                   &kp SPACE         &kp LBKT             &kp RBKT
+                                                                                                   &kp DELETE  &symbol_nav_td  &keypad_td  &magic 4 0  &symbol_nav_td  &kp ENTER
             >;
         };
 
